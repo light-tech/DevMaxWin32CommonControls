@@ -3,24 +3,25 @@
 "name":"Win Controls",
 "build_definitions": [
 	{
-		"name":"Compile",
+		"name":"Compile sources",
 		"build_steps": [
 			{
 				"action":"compile",
-				"args":["-mrelax-all", "-fms-volatile", "-fno-builtin", "-fms-extensions", "-fms-compatibility", "-fms-compatibility-version=19.10.25017","-std=c++14", "-fdelayed-template-parsing","-fcxx-exceptions","-fexceptions","-x","c++","-D","UNICODE",],
+				"args":["-mrelax-all", "-fms-volatile", "-fno-builtin", "-fms-extensions", "-fms-compatibility", "-fms-compatibility-version=19.10.25017","-std=c++14", "-fdelayed-template-parsing","-fcxx-exceptions","-fexceptions","-x","c++","-D","UNICODE"],
 				"sys_include_dir":["msvc", "ucrt", "um", "shared"],
 				"inputs":["CppWindowsCommonControls.cpp"],
+				"outputdir":"bin"
 			}
 		]
 	},
 	{
-		"name":"Link",
+		"name":"Link executable",
 		"build_steps": [
 			{
 				"action":"link",
 				"args":["/defaultlib:msvcrt.lib", "/subsystem:Windows", "User32.lib", "Gdi32.lib"],
 				"inputs":["CppWindowsCommonControls.o"],
-				"output":"CppWindowsCommonControls.exe",
+				"output":"CppWindowsCommonControls.exe"
 			}
 		]
 	}
