@@ -19,8 +19,8 @@
 		"build_steps": [
 			{
 				"action":"link",
-				"args":["/defaultlib:msvcrt.lib", "/subsystem:Windows", "User32.lib", "Gdi32.lib"],
-				"inputs":["CppWindowsCommonControls.o"],
+				"args":["/defaultlib:msvcrt.lib", "/subsystem:Windows", "User32.lib", "Gdi32.lib", "Shell32.lib"],
+				"inputs":["CppWindowsCommonControls.o", "CppWindowsCommonControls.res"],
 				"output":"CppWindowsCommonControls.exe"
 			}
 		]
